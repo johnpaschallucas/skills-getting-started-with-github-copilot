@@ -63,15 +63,33 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  transition: box-shadow 0.3s;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
+  font-size: 1.5em; /* Increase font size */
 }
 
 .activity-card p {
   margin-bottom: 8px;
+  line-height: 1.5; /* Improve line height for readability */
+}
+
+.activity-card ul {
+  padding-left: 20px; /* Indent the list */
+  margin-top: 5px; /* Space above the list */
+  list-style-type: disc; /* Use disc bullets */
+}
+
+.activity-card ul li {
+  margin-bottom: 5px; /* Space between list items */
+  color: #555; /* Slightly darker color for participants */
 }
 
 .form-group {
