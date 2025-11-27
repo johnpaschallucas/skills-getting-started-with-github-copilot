@@ -63,15 +63,37 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  transition: box-shadow 0.3s;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .activity-card h4 {
   margin-bottom: 10px;
   color: #0066cc;
+  font-size: 1.5em; /* Increase font size */
 }
 
 .activity-card p {
   margin-bottom: 8px;
+  line-height: 1.5; /* Improve line height for readability */
+}
+
+.activity-card ul {
+  padding-left: 20px; /* Indent the list */
+  margin-top: 5px; /* Space above the list */
+  list-style-type: disc; /* Use disc bullets */
+  background-color: #f0f8ff; /* Light background for better visibility */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Padding around the list */
+}
+
+.activity-card ul li {
+  margin-bottom: 5px; /* Space between list items */
+  color: #555; /* Slightly darker color for participants */
+  font-style: italic; /* Italicize participant names for emphasis */
 }
 
 .form-group {
@@ -141,4 +163,48 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.participants-block {
+  margin-top: 12px;
+}
+
+.participants-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.participants-title {
+  color: #1a237e;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.participants-count {
+  background: linear-gradient(135deg, #3949ab, #1a237e);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.participants-list {
+  padding-left: 18px;
+  margin: 0;
+  background-color: #fafcff;
+  border-radius: 6px;
+  padding: 10px;
+  list-style-type: disc;
+  border: 1px solid rgba(26,35,126,0.06);
+}
+
+.participant-item {
+  margin-bottom: 6px;
+  color: #3b3f45;
+  font-size: 0.95rem;
+  padding-left: 4px;
 }
