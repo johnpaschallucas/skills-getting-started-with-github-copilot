@@ -16,8 +16,9 @@ app = FastAPI(title="Mergington High School API",
 
 # Mount the static files directory
 current_dir = Path(__file__).parent
-app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
-          "static")), name="static")
+# Ensure static directory path is a string and based on this file's directory
+static_dir = str(current_dir / "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # In-memory activity database
 activities = {
@@ -99,3 +100,12 @@ def signup_for_activity(activity_name: str, email: str):
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
+
+
+if __name__ == "__main__":
+    # Allow running the app directly for development: `python src/app.py`
+    # Bind to 0.0.0.0 so the container or remote environment can access the port.
+    import uvicorn
+
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
